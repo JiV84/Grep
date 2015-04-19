@@ -34,9 +34,10 @@ namespace GrepLike
         {
             string temp = string.Empty;
             int ocurrencias = 0;
-            int numero = 0,nLineas = 0,unaLinea = 0;
-            string linea = string.Empty,regex = string.Empty;           
-            Match match; MatchCollection matches;
+            int numero = 0, nLineas = 0, unaLinea = 0;
+            string linea = string.Empty, regex = string.Empty;           
+            Match match;
+            MatchCollection matches;
             bool matched = false;
             StreamReader sr = new StreamReader(this.RutaFichero);
 
@@ -95,7 +96,7 @@ namespace GrepLike
                 }
                 /*Una linea puede ocupar varias en el buffer de la consola...
                  * TODO: Mejorar */
-                unaLinea=(int)Math.Floor(linea.Length + 2 > Console.WindowWidth ? 
+                unaLinea = (int)Math.Floor(linea.Length + 2 > Console.WindowWidth ? 
                     (double)(linea.Length / Console.WindowWidth) : 1);
                 nLineas += unaLinea;
 
@@ -114,7 +115,7 @@ namespace GrepLike
             }
             sr.Close();
 
-            if(ocurrencias==0)
+            if (ocurrencias == 0)
                 Console.WriteLine("No se han encontrado coincidencias");
             else
                 Console.WriteLine("Ocurrencias encontradas: {0}", ocurrencias);
