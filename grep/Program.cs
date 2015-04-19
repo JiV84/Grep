@@ -10,9 +10,7 @@ namespace GrepLike
     class Program
     {
         static void Main(string[] args)
-        {      
-            Grep grep;
-
+        {   
             try
             {
                 if (args == null || args.Length < 2)
@@ -22,7 +20,7 @@ namespace GrepLike
                 else if (string.IsNullOrEmpty(args[1]))
                     throw new ArgumentException("El texto introducido no es válido");
                 else
-                    grep = new Grep(args[0], args[1]);               
+                    new Grep(args[0], args[1]);               
             }
             catch (Exception e)
             {
