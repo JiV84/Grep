@@ -41,9 +41,9 @@ namespace GrepLike
             //se crea la expresion regular
             foreach (char item in this.Frase)
                 regex += "[" + item + "]"; 
-	    
-	        /*Se lee el fichero linea a linea buscando
-             *coincidencias con la expresion regular*/
+
+            /*Se lee el fichero linea a linea buscando
+             *coincidencias con la expresion regular*/ 
             while (!sr.EndOfStream)
             {
                 linea = sr.ReadLine();
