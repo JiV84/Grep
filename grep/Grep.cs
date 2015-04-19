@@ -32,6 +32,7 @@ namespace GrepLike
 
         public void Matches()
         {
+            int ocurrencias = 0;
             int numero = 0,nLineas = 0,unaLinea = 0;
             string linea = string.Empty,regex = string.Empty;           
             Match match; MatchCollection matches;
@@ -52,7 +53,10 @@ namespace GrepLike
 
                 matched = match.Success;
                 if (matched)
+                {
                     matches = Regex.Matches(linea, regex);
+                    ocurrencias += matches.Count;
+                }
                 else
                     continue;
 
@@ -105,6 +109,11 @@ namespace GrepLike
                 }
             }
             sr.Close();
+
+            if(ocurrencias==0)
+                Console.WriteLine("No se han encontrado coincidencias");
+            else
+                Console.WriteLine("Ocurrencias encontradas: {0}", ocurrencias);
         }
     }
 }

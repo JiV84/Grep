@@ -19,6 +19,8 @@ namespace GrepLike
                     throw new ArgumentException("Sintaxis: grep <rutaFichero> <textoAEncontrar>");
                 else if (!File.Exists(args[0]))
                     throw new FileNotFoundException(string.Format("El fichero '{0}' no existe!", args[0]));
+                else if (string.IsNullOrEmpty(args[1]))
+                    throw new ArgumentException("El texto introducido no es válido");
                 else
                     grep = new Grep(args[0], args[1]);
                 
