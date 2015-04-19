@@ -105,7 +105,9 @@ namespace GrepLike
 
                 if (nLineas >= 22)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("\nPresiona una tecla para ver mas ocurrencias");
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.ReadKey();
                     nLineas = 0;
                 }
