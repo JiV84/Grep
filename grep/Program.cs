@@ -29,7 +29,6 @@ namespace GrepLike
                 Console.WriteLine("".PadLeft(55,'=')+ 
                     "\nERROR: "+ e.Message + "\n".PadRight(56, '='));
             }
-            Console.ReadLine();
         }
     }
 }
