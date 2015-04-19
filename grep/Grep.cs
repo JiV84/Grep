@@ -40,8 +40,10 @@ namespace GrepLike
 
             //se crea la expresion regular
             foreach (char item in this.Frase)
-                regex += "[" + item + "]";
-
+                regex += "[" + item + "]"; 
+	    
+	        /*Se lee el fichero linea a linea buscando
+             *coincidencias con la expresion regular*/
             while (!sr.EndOfStream)
             {
                 linea = sr.ReadLine();
@@ -57,7 +59,11 @@ namespace GrepLike
                 /*se imprimen las lineas con coincidencias.*/
                 Console.WriteLine("\nLINEA {0}", numero);
                 Console.WriteLine("".PadLeft(Console.WindowWidth, '='));
-                //Console.WriteLine();
+
+                /*Se imprime caracter a caracter cada linea
+                 *Si se llega a un caracter cuya posición
+                 *coincide con el indice de alguna ocurrencia
+                 *se pintará en color amarillo */
                 for (int i = 0; i < linea.Length; i++)
                 {
                     foreach (Match item in matches)

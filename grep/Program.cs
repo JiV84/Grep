@@ -26,8 +26,8 @@ namespace GrepLike
             }
             catch (Exception e)
             {
-                Console.WriteLine("".PadLeft(50,'=')+ 
-                    "\nERROR: "+ e.Message + "\n".PadRight(51, '='));
+                Console.WriteLine("".PadLeft(55,'=')+ 
+                    "\nERROR: "+ e.Message + "\n".PadRight(56, '='));
             }
             Console.ReadLine();
         }
