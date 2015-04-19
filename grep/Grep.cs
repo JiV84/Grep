@@ -28,9 +28,10 @@ namespace GrepLike
         {
             this.RutaFichero = rutaFichero;
             this.Frase = frase;
+            this.Matches();
         }
 
-        public void Matches()
+        private void Matches()
         {
             string temp = string.Empty;
             int ocurrencias = 0;

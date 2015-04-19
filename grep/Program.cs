@@ -22,14 +22,12 @@ namespace GrepLike
                 else if (string.IsNullOrEmpty(args[1]))
                     throw new ArgumentException("El texto introducido no es válido");
                 else
-                    grep = new Grep(args[0], args[1]);
-                
-                grep.Matches();
+                    grep = new Grep(args[0], args[1]);               
             }
             catch (Exception e)
             {
-                Console.WriteLine("".PadLeft(55,'=')+ 
-                    "\nERROR: "+ e.Message + "\n".PadRight(56, '='));
+                Console.WriteLine("".PadLeft(55, '=') +
+                    "\nERROR: " + e.Message + "\n".PadRight(56, '='));
             }
         }
     }
