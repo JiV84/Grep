@@ -15,7 +15,7 @@ namespace GrepLike
         public string Frase
         {
             get { return _frase; }
-            set { _frase = value; }
+            set { _frase = value.ToLowerInvariant(); }
         }
 
         public string RutaFichero
@@ -32,6 +32,7 @@ namespace GrepLike
 
         public void Matches()
         {
+            string temp = string.Empty;
             int ocurrencias = 0;
             int numero = 0,nLineas = 0,unaLinea = 0;
             string linea = string.Empty,regex = string.Empty;           
@@ -48,13 +49,14 @@ namespace GrepLike
             while (!sr.EndOfStream)
             {
                 linea = sr.ReadLine();
+                temp = linea.ToLowerInvariant();
                 numero++;
-                match = Regex.Match(linea, regex);
+                match = Regex.Match(temp, regex);
 
                 matched = match.Success;
                 if (matched)
                 {
-                    matches = Regex.Matches(linea, regex);
+                    matches = Regex.Matches(temp, regex);
                     ocurrencias += matches.Count;
                 }
                 else
