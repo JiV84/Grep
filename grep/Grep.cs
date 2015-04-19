@@ -9,8 +9,8 @@ namespace GrepLike
 {
     public class Grep
     {
-        string _rutaFichero;
-        string _frase;
+        private string _rutaFichero;
+        private string _frase;
 
         public string Frase
         {
@@ -38,7 +38,7 @@ namespace GrepLike
             bool matched = false;
             StreamReader sr = new StreamReader(this.RutaFichero);
 
-            //crear expresion regular
+            //se crea la expresion regular
             foreach (char item in this.Frase)
                 regex += "[" + item + "]";
 
@@ -54,8 +54,7 @@ namespace GrepLike
                 else
                     continue;
 
-                /*se imprem las lineas con coincidencias.*/
-
+                /*se imprimen las lineas con coincidencias.*/
                 Console.WriteLine("\nLINEA {0}", numero);
                 Console.WriteLine("".PadLeft(Console.WindowWidth, '='));
                 //Console.WriteLine();
@@ -98,7 +97,6 @@ namespace GrepLike
                     Console.ReadKey();
                     nLineas = 0;
                 }
-
             }
             sr.Close();
         }
